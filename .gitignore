@@ -1,0 +1,20 @@
+# Ignorar archivos de configuración de entorno
+.clang-format
+.clangd
+
+# Ignorar archivos personalizados
+*.mk
+*.project
+Makefile
+*.workspace
+*.json
+
+# Ignorar binarios compilados
+*.o
+*.out
+*.exe
+*.elf
+
+# Archivos de backup/temporales
+*~
+*.swp

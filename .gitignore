@@ -8,6 +8,9 @@
 Makefile
 *.workspace
 *.json
+*.DS_Store
+*.cache*
+*.codelite
 
 # Ignorar binarios compilados
 *.o

@@ -8,7 +8,6 @@
 - **Compilar**: `gcc juego_gato.c -o juego_gato`  
 
 ### 2. Conversor de Epoch Time (C)
-    [epoc_conversor](epoc_conversor/)
 
 ## 📝 Descripción
 Herramienta en C que convierte timestamp Unix (epoch time) a formato de fecha/hora legible para humanos.

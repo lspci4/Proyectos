@@ -14,8 +14,15 @@ int main(){
     
     printf("=== VALORES ORIGINALES ===\n");
     printf("valor x: %d (dirección de x: %p)\n", x, &x);
-    printf("valrr y: %c (dirección de y: %p)\n\n", y, &y);
+    printf("valor y: %c (dirección de y: %p)\n\n", y, &y);
     
+    //3. Modificación a través de punteros
+    *p1 = 50;
+    *p2 = 'J';
+    
+    printf("=== VALORES MODIFICADOS CON PUNTEROS ===\n"); 
+    printf("x: %d (dirección de x: %p)\n", x, &x);
+    printf("y: %c (dirección de y: %p)\n\n", y, &y);
     
     return 0;
 }

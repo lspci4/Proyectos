@@ -26,7 +26,7 @@ int main(){
     int nums[] = {10,20,30,40,50};
     int *p = nums;
     
-    // sizeof solo puede darme el tamaño real del arreglo si estás en el mismo ámbito donde fue declarado como array.
+    // sizeof solo puede darme el tamaño real del arreglo si estoy en el mismo ámbito donde fue declarado como array.
     // Si lo paso a una función, se convierte en puntero y sizeof ya no sirve para contar elementos.
     unsigned int len = sizeof(nums) / sizeof(nums[0]);
     printf("Largo del arreglo: %d\n", len);

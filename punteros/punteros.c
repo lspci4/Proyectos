@@ -1,6 +1,14 @@
 //5. Puntero a puntero 
 #include <stdio.h>
 
+// Función que imprime los elementos de un arreglo usando un puntero
+void imprimir(int *arreglo, int cantidad_de_elementos) {
+    for (int i = 0; i < cantidad_de_elementos; i++) {
+        printf("Elemento %d = %d\n", i, *(arreglo + i));
+    }
+    printf("\n");
+}
+
 int main(){
     //1. variables normales
     int x = 10;
@@ -25,14 +33,12 @@ int main(){
     //4. Aritmética de punteros
     int nums[] = {10,20,30,40,50};
     int *p = nums;
+    int cantidad_de_elementos = sizeof(nums) / sizeof(nums[0]);
     
-    // sizeof solo puede darme el tamaño real del arreglo si estás en el mismo ámbito donde fue declarado como array.
-    // Si lo paso a una función, se convierte en puntero y sizeof ya no sirve para contar elementos.
-    unsigned int len = sizeof(nums) / sizeof(nums[0]);
-    printf("Largo del arreglo: %d\n", len);
+    imprimir(nums, cantidad_de_elementos);
     
     printf("=== RECORRIENDO ARRAY CON PUNTEROS ===\n");
-    for(int i = 0; i < len; i++){
+    for(int i = 0; i < cantidad_de_elementos; i++){
         printf("nums[%d] = %d (dirección %p)\n", i, *(p + i), p + i);
     }
     

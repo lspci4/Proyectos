@@ -23,6 +23,13 @@ int main(){
     printf("y: %c (dirección de y: %p)\n\n", y, &y);
     
     //4. Aritmética de punteros
-
+    int nums[] = {10,20,30,40,50};
+    int *p = nums;
+    
+    printf("=== RECORRIENDO ARRAY CON PUNTEROS ===\n");
+    for(int i = 0; i < 5; i++){
+        printf("nums[%d] = %d (dirección %p)\n", i, *(p + i), p + i);
+    }
+    
     return 0;
 }

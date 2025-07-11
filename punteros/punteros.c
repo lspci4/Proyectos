@@ -1,4 +1,3 @@
-//5. Puntero a puntero 
 #include <stdio.h>
 
 int main(){

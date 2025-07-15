@@ -1,7 +1,7 @@
-#include <stdio.h>
+/*  ==== Programa resuelto con la sentencia switch ====
+    ==== Dada una nota de un examen mediante un código escribir el literal que le corresponde a la nota.====*/ 
 
-/*Dada una nota de un examen mediante un código
-escribir el literal que le corresponde a la nota.*/ 
+#include <stdio.h>
 
 int main(){
     char nota;

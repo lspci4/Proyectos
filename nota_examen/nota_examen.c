@@ -20,7 +20,7 @@ int main(){
                     break;
         default:    puts("No es posible esta nota");
     
+    }
     puts("Final de programa");
     return 0;
-    }
 }

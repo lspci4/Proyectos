@@ -15,4 +15,26 @@ int main(){
     int elementos = 0;
     int *arr= malloc(capacidad * sizeof(int));
 
+    for(int i=0; i < 5; i++){
+        if(elementos == capacidad){
+            capacidad *=2;
+            int* new_arr = realloc(arr, capacidad * sizeof(int)); 
+            if(new_arr == NULL){
+                printf("[-] Error de memoria..\n");
+                free(arr);
+                return 1;
+            } 
+            arr = new_arr;
+        }
+        arr[elementos] = i;
+        elementos++;
+    }
+    printf("Elementos del arreglo dinamico:\n");
+    for(int i = 0; i < elementos; i++){
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+    free(arr);
+    return 0;
+
 }

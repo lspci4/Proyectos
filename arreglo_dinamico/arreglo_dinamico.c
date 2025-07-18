@@ -6,8 +6,8 @@
     Imprime el arreglo al final
     Libera la memoria al terminar
 */
-#include <stdio.h>
-#include <stdlib.h>
+#include <stdio.h> // necesario para entradas y salidas printf
+#include <stdlib.h> // necesario para malloc, realloc
 
 int main(){
     int capacidad = 2; //capacidad Inicial
@@ -19,7 +19,7 @@ int main(){
         // Si esta lleno duplicar la capacidad
         if(elementos == capacidad){
             capacidad *=2;
-            int* new_arr = realloc(arr, capacidad * sizeof(int)); // redimensionar 
+            int *new_arr = realloc(arr, capacidad * sizeof(int)); // redimensionar 
             if(new_arr == NULL){
                 printf("[-] Error de memoria..\n");
                 free(arr);

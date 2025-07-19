@@ -16,16 +16,16 @@ que pueda crecer automáticamente y permita insertar y eliminar elementos.
 
 // Prototipos
 int *crear_arreglo(int capacidad);
-int *insertar_elemento(int *arreglo, int *tamaño, int *capacidad, int valor);
+int *insertar_elemento(int **arreglo, int *tamaño, int *capacidad, int valor);
 
-int main(){
+int main() {
     // Inicializar arreglo
     int capacidad = 2;
     int tamaño = 0;
 
     // Desafio 1
     int *arreglo = crear_arreglo(capacidad);
-    if(arreglo == NULL){
+    if (arreglo == NULL) {
         return 1;
     }
 
@@ -33,35 +33,41 @@ int main(){
     arreglo = insertar_elemento(&arreglo, &tamaño, &capacidad, 10);
     arreglo = insertar_elemento(&arreglo, &tamaño, &capacidad, 20);
     
-    printf("%d", arreglo);
+    // Imprimir los valores del arreglo, no las direcciones
+    printf("%d ", arreglo[0]);
+    printf("%d ", arreglo[1]);
+    
+    // Liberar memoria al final
+    free(arreglo);
     return 0;
 }
 
 // crear arreglo y retornar puntero
-int *crear_arreglo(int capacidad){
-    int *arreglo= malloc(capacidad * sizeof(int));
-    if(arreglo == NULL){
+int *crear_arreglo(int capacidad) {
+    int *arreglo = malloc(capacidad * sizeof(int));
+    if (arreglo == NULL) {
         printf("[-] Error asignando memoria\n");
-    }else{
+    } else {
         printf("[+] Asignación de memoria exitosa con capacidad: %d\n", capacidad);
     }
     return arreglo;
 }
 
-// Insertar elementos y redimiensionar arreglo
-int *insertar_elemento(int *arreglo, int *tamaño, int *capacidad, int valor){
-    if(*tamaño >= *capacidad){
-        int nueva_capacidad = (*capacidad) *2;
-        int *nuevo_arreglo = realloc(arreglo, nueva_capacidad * sizeof(int));
-        if(nuevo_arreglo == NULL){
+// Insertar elementos y redimensionar arreglo
+int *insertar_elemento(int **arreglo, int *tamaño, int *capacidad, int valor) {
+    if (*tamaño >= *capacidad) {
+        int nueva_capacidad = (*capacidad) * 2;
+        int *nuevo_arreglo = realloc(*arreglo, nueva_capacidad * sizeof(int));
+        if (nuevo_arreglo == NULL) {
             printf("[-] No se puede redimensionar el arreglo\n");
-            return arreglo;
+            return *arreglo;
         }
-        arreglo = nuevo_arreglo;
+        *arreglo = nuevo_arreglo;
         *capacidad = nueva_capacidad;
-        printf("[+] Arreglo redimiensionado a nueva capacidad: %d\n", *capacidad);
+        printf("[+] Arreglo redimensionado a nueva capacidad: %d\n", *capacidad);
     }
-    arreglo[*tamaño] = valor;
+    (*arreglo)[*tamaño] = valor;
     (*tamaño)++;
-    printf("Insertado: %d (tamaño actual: %d)\n", valor,*tamaño);
+    printf("Insertado: %d (tamaño actual: %d)\n", valor, *tamaño);
+    return *arreglo;
 }

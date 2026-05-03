@@ -1,0 +1,9 @@
+compile_commands.json
+.cache/
+*.o
+*.dSYM/
+# binaries: ignore executables but keep .c sources
+ch*/[!.]*
+!ch*/*.c
+!ch*/*.h
+!ch*/Makefile

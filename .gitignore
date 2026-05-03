@@ -18,7 +18,14 @@ Makefile
 *.out
 *.exe
 *.elf
+*.dSYM/
 
 # Archivos de backup/temporales
 *~
 *.swp
+
+# Binarios de capítulos (ignora ejecutables, conserva fuentes)
+ch*/[!.]*
+!ch*/*.c
+!ch*/*.h
+!ch*/Makefile

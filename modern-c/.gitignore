@@ -1,0 +1,17 @@
+# Ignorar todo por defecto
+*
+
+# Permitir directorios para que git los recorra
+!*/
+
+# Permitir archivos fuente y documentación
+!*.c
+!*.h
+!*.md
+!*.json
+!.gitignore
+!Makefile
+
+# Configuración local del editor/herramientas (no va al repo)
+.claude/
+.DS_Store

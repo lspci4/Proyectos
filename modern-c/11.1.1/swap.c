@@ -18,11 +18,11 @@ void double_swap(double *p0, double *p1) {
     // (porque main pasó &d0 y &d1)
 
     double tmp = *p0;
-    //          ^^^ aplica * a la dirección p0 -> me devuelve d0 ( que vale 1.5)
+    //          ^^^ aplico * a la dirección p0 -> me devuelve d0 ( que vale 1.5)
 
     *p0 = *p1;
-    //   ^^^ desreferencia p1 -> me devuelve d1 (que vale 9.9)
-    //  ^^^ desreferencia p0 -> me da acceso a d0 para escribir
+    //   ^^^ desreferencio p1 -> me devuelve d1 (que vale 9.9)
+    //  ^^^ desreferencio p0 -> me da acceso a d0 para escribir
     //  resultado: d1 ahora vale 1.5
 
     *p1 = tmp;
